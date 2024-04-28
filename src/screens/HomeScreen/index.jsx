@@ -19,7 +19,6 @@ export default function HomeScreen() {
 
   return (
       <SafeAreaView style={style.container}>
-        {/* Showing inputed text */}
         <View style={[style.section, style.inputItem]}>
           <TextInput
               defaultValue={val}
@@ -27,8 +26,6 @@ export default function HomeScreen() {
               editable={false}
           />
         </View>
-
-        {/* Input button */}
         <View style={[style.section, style.row]}>
           <View style={[style.row, {width: '75%'}]}>
             {dataNumber.map((item) => (

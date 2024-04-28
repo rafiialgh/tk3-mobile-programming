@@ -13,12 +13,10 @@ export default function useController() {
   const onSave = () => {
     requestAnimationFrame(() => {
       if (val.length > 0) {
-        // Save value to database
         db.transaction((tx) => {
           tx.executeSql("INSERT INTO items (value) VALUES (?)", [val]);
         }, null);
 
-        // After save database, clear textinput
         setTimeout(() => {
           setVal("");
         }, 50);

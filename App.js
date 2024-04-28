@@ -1,11 +1,10 @@
 import { useEffect } from 'react'
-import Routes from './src/navigation/AppNavigator'
 import openDatabase from './src/modules/openDatabase'
+import AppNavigator from './src/navigation/AppNavigator'
 
 const db = openDatabase()
 
 export default function App() {
-  // Open database & create table if not exist
   useEffect(() => {
     db.transaction((tx) => {
       tx.executeSql(
@@ -14,5 +13,5 @@ export default function App() {
     });
   }, []);
 
-  return <Routes />
+  return <AppNavigator />
 }

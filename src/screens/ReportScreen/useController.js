@@ -8,7 +8,6 @@ export default function useController() {
   const isFocused = useIsFocused();
   const [items, setItems] = useState([]);
 
-  // Get data from database
   useEffect(() => {
     if (isFocused) {
       db.transaction((tx) => {
